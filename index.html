@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajmera Fashion Hub</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background:#f5f5f5; }
+
+    header {
+      background:#111;
+      color:#fff;
+      padding:15px;
+      text-align:center;
+      font-size:24px;
+      font-weight:bold;
+    }
+
+    nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:10px 20px;
+      background:#222;
+      color:#fff;
+    }
+
+    .menu a {
+      margin:0 10px;
+      color:#fff;
+      text-decoration:none;
+      cursor:pointer;
+    }
+
+    .menu a:hover { color:orange; }
+
+    .search-bar input {
+      padding:5px;
+    }
+
+    .section { display:none; padding:20px; }
+    .active { display:block; }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+      gap:20px;
+    }
+
+    .card {
+      background:#fff;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 2px 5px rgba(0,0,0,0.2);
+      position:relative;
+      transition:0.3s;
+    }
+
+    .card img {
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      transition:0.3s;
+    }
+
+    .card:hover img { transform:scale(1.1); }
+
+    .card .overlay {
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.5);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      opacity:0;
+      transition:0.3s;
+    }
+
+    .card:hover .overlay { opacity:1; }
+
+    .offer-card {
+      background:linear-gradient(45deg, orange, red);
+      color:#fff;
+      padding:20px;
+      border-radius:10px;
+      text-align:center;
+      font-size:20px;
+    }
+
+    footer {
+      background:#111;
+      color:#fff;
+      text-align:center;
+      padding:15px;
+      margin-top:20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>Ajmera Fashion Hub</header>
+
+<nav>
+  <div class="menu">
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('brands')">Brands</a>
+    <a onclick="showSection('products')">Products</a>
+    <a onclick="showSection('offers')">Offers</a>
+    <a onclick="showSection('contact')">Contact</a>
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Search...">
+  </div>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="section active">
+  <h2>Welcome to Ajmera Fashion Hub</h2>
+  <p>Trendy fashion for boys and girls</p>
+</div>
+
+<!-- BRANDS -->
+<div id="brands" class="section">
+  <h2>Brands</h2>
+  <div class="grid">
+    <div class="card"><img src="https://via.placeholder.com/300?text=Nike"><div class="overlay">Nike</div></div>
+    <div class="card"><img src="https://via.placeholder.com/300?text=Adidas"><div class="overlay">Adidas</div></div>
+    <div class="card"><img src="https://via.placeholder.com/300?text=Puma"><div class="overlay">Puma</div></div>
+    <div class="card"><img src="https://via.placeholder.com/300?text=Zara"><div class="overlay">Zara</div></div>
+    <div class="card"><img src="https://via.placeholder.com/300?text=H&M"><div class="overlay">H&M</div></div>
+    <div class="card"><img src="https://via.placeholder.com/300?text=Levis"><div class="overlay">Levi's</div></div>
+    <div class="card"><img src="https://via.placeholder.com/300?text=Gucci"><div class="overlay">Gucci</div></div>
+    <div class="card"><img src="https://via.placeholder.com/300?text=LV"><div class="overlay">Louis Vuitton</div></div>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div id="products" class="section">
+  <h2>Products</h2>
+  <div class="grid">
+    <div class="card"><img src="https://via.placeholder.com/300"><div class="overlay">View Product</div></div>
+    <div class="card"><img src="https://via.placeholder.com/300"><div class="overlay">View Product</div></div>
+    <div class="card"><img src="https://via.placeholder.com/300"><div class="overlay">View Product</div></div>
+  </div>
+</div>
+
+<!-- OFFERS -->
+<div id="offers" class="section">
+  <h2>Offers</h2>
+  <div class="grid">
+    <div class="offer-card">20% OFF</div>
+    <div class="offer-card">30% OFF</div>
+    <div class="offer-card">Buy 2 Get 1 Free</div>
+    <div class="offer-card">Buy 3 Get 1 Free</div>
+    <div class="offer-card">Flat ₹500 OFF</div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+  <h2>Contact</h2>
+  <p>Email: hemantajmera958@gmail.com</p>
+  <p>Phone: 8290654779</p>
+</div>
+
+<footer>© 2026 Ajmera Fashion Hub</footer>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
